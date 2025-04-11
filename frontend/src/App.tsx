@@ -1,11 +1,16 @@
-import LandingPage from './Pages/LandingPage'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LandingPage from './Pages/LandingPage';
+import MockTestPage from './Pages/MockTestPage';
 
 const App = () => {
   return (
-    <div>
-      <LandingPage></LandingPage>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/mock-test" element={<MockTestPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Users, Notebook as Robot, Video, Brain, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 function FallingParticle({ delay }: { delay: number }) {
   const randomX = Math.random() * 100 - 50; // Random X position between -50 and 50
@@ -70,15 +71,17 @@ function LandingPage() {
             <Users className="h-8 w-8" />
             Susap
           </motion.div>
-          <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition-colors"
-          >
-            Get Started
-          </motion.button>
+          <Link to="/mock-test">
+            <motion.button
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition-colors"
+            >
+              Get Started
+            </motion.button>
+          </Link>
         </nav>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
