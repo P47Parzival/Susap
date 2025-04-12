@@ -2,7 +2,7 @@
 
 A cutting-edge interview preparation platform leveraging AI voice agents and advanced language models to provide realistic interview experiences.
 
-![Susap Banner](https://github.com/P47Parzival/Susap/blob/main/public/WhatsApp%20Image%202025-04-12%20at%2015.08.17_15622805.jpg?raw=true)
+![Susap Banner](https://github.com/user-attachments/assets/1c0131c7-9f2d-4e3b-b47c-9679e76d8f9a)
 
 ## 🚀 Key Features
 
@@ -32,19 +32,19 @@ A cutting-edge interview preparation platform leveraging AI voice agents and adv
 ## ⚡ Quick Setup
 
 1. **Clone the repository**
-   ```bash
+```bash
    git clone https://github.com/yourusername/susap.git
    cd susap
-   ```
+```
 
 2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 3. **Configure environment variables**
    Create `.env.local` and add:
-   ```env
+```env
    NEXT_PUBLIC_VAPI_WEB_TOKEN=your_vapi_token
    NEXT_PUBLIC_VAPI_WORKFLOW_ID=your_workflow_id
    GOOGLE_GENERATIVE_AI_API_KEY=your_gemini_key
@@ -54,9 +54,9 @@ A cutting-edge interview preparation platform leveraging AI voice agents and adv
    ```
 
 4. **Start development server**
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
 ## 🎯 Core Features
 
@@ -114,4 +114,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
   <strong>Built with ❤️ for the future of interview preparation</strong>
-</div>
+      </div>
