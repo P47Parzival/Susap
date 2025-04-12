@@ -8,6 +8,7 @@ A cutting-edge interview preparation platform leveraging AI voice agents and adv
 
 - **AI Voice Interviews**: Realistic conversations with Vapi AI-powered voice agents
 - **Smart Feedback**: Real-time performance analysis and detailed feedback using Google Gemini
+- **AI Chat Assistant**: Interactive chat with Groq-powered DeepSeek model for interview preparation
 - **Comprehensive Dashboard**: Track progress and manage interview sessions
 - **Secure Authentication**: Firebase-powered user management
 - **Responsive Design**: Seamless experience across all devices
@@ -18,10 +19,13 @@ A cutting-edge interview preparation platform leveraging AI voice agents and adv
 [![Firebase](https://img.shields.io/badge/-Firebase-black?style=for-the-badge&logoColor=white&logo=firebase&color=DD2C00)](https://firebase.google.com/)
 [![TailwindCSS](https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4)](https://tailwindcss.com/)
 [![Vapi](https://img.shields.io/badge/-Vapi-white?style=for-the-badge&color=5dfeca)](https://vapi.ai/)
+[![Groq](https://img.shields.io/badge/-Groq-black?style=for-the-badge&logoColor=white&color=00A67E)](https://groq.com/)
 
 - **Frontend**: Next.js 14, TailwindCSS, shadcn/ui
 - **Backend**: Firebase, Google Gemini API
 - **Voice AI**: Vapi AI
+- **Chat AI**: Groq API with DeepSeek R1 Distill LLaMA 70B model
+- **Feedback AI**: Google Gemini 2.0 Flash 001
 - **Validation**: Zod
 - **Authentication**: Firebase Auth
 
@@ -45,6 +49,7 @@ A cutting-edge interview preparation platform leveraging AI voice agents and adv
    NEXT_PUBLIC_VAPI_WORKFLOW_ID=your_workflow_id
    GOOGLE_GENERATIVE_AI_API_KEY=your_gemini_key
    NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_key
+   GROQ_API_KEY=your_groq_api_key
    # Add other Firebase config variables
    ```
 
@@ -61,8 +66,14 @@ A cutting-edge interview preparation platform leveraging AI voice agents and adv
 - Real-time voice interaction
 - Natural language processing
 
+### AI Chat Assistant
+- Interactive chat with DeepSeek R1 Distill LLaMA 70B model
+- Real-time responses to interview preparation questions
+- Contextual understanding of technical concepts
+- Personalized guidance for interview success
+
 ### Performance Analytics
-- Detailed feedback on responses
+- Detailed feedback on responses using Gemini 2.0 Flash 001
 - Communication skills assessment
 - Technical knowledge evaluation
 - Improvement suggestions
@@ -96,6 +107,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Vapi AI](https://vapi.ai) for voice agent technology
 - [Google Gemini](https://deepmind.google/technologies/gemini/) for AI language model
+- [Groq](https://groq.com) for high-performance AI inference
 - [Firebase](https://firebase.google.com) for backend services
 
 ---
