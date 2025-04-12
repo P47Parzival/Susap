@@ -247,9 +247,9 @@ const Agent = ({
       {mounted && (
         <>
           {/* Call View Container */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 w-full px-4 py-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 w-full px-6 py-10 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl">
             {/* AI Interviewer Card */}
-            <div className="flex flex-col items-center text-center bg-gradient-to-br from-blue-600 to-purple-700 p-6 rounded-xl shadow-lg w-[260px]">
+            <div className="flex flex-col items-center text-center bg-gradient-to-br from-blue-600 to-purple-700 p-6 rounded-2xl shadow-xl w-[260px]">
               <div className="relative">
                 <Image
                   src="/ai-avatar.png"
@@ -262,29 +262,29 @@ const Agent = ({
                   <span className="absolute -bottom-1 -right-1 h-3 w-3 bg-green-400 rounded-full animate-pulse shadow-md" />
                 )}
               </div>
-              <h3 className="mt-4 text-white font-semibold text-lg">AI Interviewer</h3>
+              <h3 className="mt-4 text-white font-semibold text-lg tracking-wide">AI Interviewer</h3>
             </div>
   
             {/* User Card */}
-            <div className="bg-white/5 backdrop-blur-lg border border-white/10 p-6 rounded-xl flex flex-col items-center shadow-lg">
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl flex flex-col items-center shadow-xl w-[260px]">
               <Image
                 src="/user-avatar.png"
                 alt="User Avatar"
                 width={120}
                 height={120}
-                className="rounded-full object-cover border border-white/20 shadow-sm"
+                className="rounded-full object-cover border border-white/20 shadow"
               />
-              <h3 className="mt-4 text-white font-semibold text-lg">{userName}</h3>
+              <h3 className="mt-4 text-white font-semibold text-lg tracking-wide">{userName}</h3>
             </div>
           </div>
   
           {/* Transcript Message */}
           {messages.length > 0 && (
             <div className="mt-6 w-full max-w-3xl mx-auto px-4">
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl py-4 px-6 shadow-md">
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl py-5 px-6 shadow-lg">
                 <p
                   key={lastMessage}
-                  className="text-white text-center animate-fadeIn transition-opacity duration-500"
+                  className="text-white text-center text-base animate-fadeIn transition-opacity duration-500"
                 >
                   {lastMessage}
                 </p>
@@ -293,14 +293,14 @@ const Agent = ({
           )}
   
           {/* Call Button */}
-          <div className="w-full flex justify-center mt-8">
+          <div className="w-full flex justify-center mt-2">
             {callStatus !== "ACTIVE" ? (
               <button
-                className="relative bg-cyan-500 hover:bg-cyan-600 text-white py-2 px-6 rounded-lg text-sm font-semibold transition-all"
+                className="relative bg-cyan-500 hover:bg-cyan-600 text-white py-2.5 px-8 rounded-xl text-sm font-semibold shadow-md transition-all duration-300"
                 onClick={handleCall}
               >
                 {callStatus === "CONNECTING" && (
-                  <span className="absolute left-0 top-1/2 -translate-y-1/2 h-3 w-3 bg-white/40 rounded-full animate-ping ml-[-1.5rem]" />
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 h-3 w-3 bg-white/40 rounded-full animate-ping" />
                 )}
                 <span className="relative">
                   {callStatus === "INACTIVE" || callStatus === "FINISHED"
@@ -310,7 +310,7 @@ const Agent = ({
               </button>
             ) : (
               <button
-                className="bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg text-sm font-semibold transition-all"
+                className="bg-red-600 hover:bg-red-700 text-white py-2.5 px-8 rounded-xl text-sm font-semibold shadow-md transition-all duration-300"
                 onClick={handleDisconnect}
               >
                 End
@@ -321,6 +321,7 @@ const Agent = ({
       )}
     </>
   );
+  
   
 };
 

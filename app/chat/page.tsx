@@ -10,6 +10,16 @@ export default function ChatPage() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  const formatResponse = (content: string) => {
+    // Remove excessive newlines
+    let formatted = content.replace(/\n{3,}/g, '\n\n');
+    // Remove markdown code blocks if they're empty or just whitespace
+    formatted = formatted.replace(/```\s*\n\s*```/g, '');
+    // Trim whitespace
+    formatted = formatted.trim();
+    return formatted;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -20,23 +30,40 @@ export default function ChatPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
+      const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_DEEPSEEK_API_KEY}`
+          'Authorization': 'Bearer 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'
         },
         body: JSON.stringify({
           messages: [...messages, { role: 'user', content: userMessage }],
-          model: 'deepseek-chat'
+          model: "deepseek-r1-distill-llama-70b",
+          temperature: 0.2,
+          max_tokens: 1024, // Reduced for more concise responses
+          top_p: 0.90,
+          stream: false
         })
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
-      setMessages(prev => [...prev, { role: 'assistant', content: data.choices[0].message.content }]);
+      
+      if (!data || !data.choices || !data.choices[0] || !data.choices[0].message) {
+        throw new Error('Invalid response format from API');
+      }
+
+      const formattedResponse = formatResponse(data.choices[0].message.content);
+      setMessages(prev => [...prev, { role: 'assistant', content: formattedResponse }]);
     } catch (error) {
       console.error('Error:', error);
-      setMessages(prev => [...prev, { role: 'assistant', content: 'Sorry, I encountered an error. Please try again.' }]);
+      setMessages(prev => [...prev, { 
+        role: 'assistant', 
+        content: 'Sorry, I encountered an error. Please try again. If the problem persists, please check the console for details.' 
+      }]);
     } finally {
       setIsLoading(false);
     }
@@ -56,7 +83,7 @@ export default function ChatPage() {
             className={`mb-4 px-5 py-3 rounded-2xl text-sm transition-all duration-300 max-w-[80%] ${
               message.role === "user"
                 ? "bg-gradient-to-br from-blue-600 to-blue-500 text-white ml-auto animate-slideInRight shadow-md"
-                : "bg-white/10 text-white mr-auto animate-slideInLeft shadow-inner"
+                : "bg-white/10 text-white mr-auto animate-slideInLeft shadow-inner whitespace-pre-wrap"
             }`}
           >
             {message.content}
@@ -88,6 +115,4 @@ export default function ChatPage() {
       </form>
     </div>
   );
-  
-
 } 

@@ -100,9 +100,65 @@ async function Home() {
           )}
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <section className="mt-16 overflow-hidden">
+        <h2 className="text-white text-xl font-semibold mb-8">Success Stories</h2>
+        <div className="testimonials-container relative">
+          <div className="testimonials-track flex gap-6 animate-scroll">
+            {[
+              {
+                name: "Sarah Chen",
+                role: "Software Engineer at Google",
+                image: "/testimonials/sarah.jpg",
+                text: "This platform helped me crack my Google interview. The AI feedback was incredibly detailed!"
+              },
+              {
+                name: "Michael Rodriguez",
+                role: "Full Stack Developer at Meta",
+                image: "/testimonials/michael.jpg",
+                text: "The practice interviews were spot-on. Landed my dream job thanks to this platform."
+              },
+              {
+                name: "Priya Patel",
+                role: "Frontend Developer at Amazon",
+                image: "/testimonials/priya.jpg",
+                text: "The AI chat feature helped me understand complex concepts easily. Highly recommended!"
+              },
+              {
+                name: "James Wilson",
+                role: "Backend Engineer at Microsoft",
+                image: "/testimonials/james.jpg",
+                text: "The course content is excellent. It covers everything you need for technical interviews."
+              },
+              {
+                name: "Emma Thompson",
+                role: "DevOps Engineer at Netflix",
+                image: "/testimonials/emma.jpg",
+                text: "Real-world scenarios and instant feedback made all the difference in my preparation."
+              }
+            ].map((testimonial, index) => (
+              <div
+                key={index}
+                className="testimonial-card flex-shrink-0 w-80 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold">
+                    {testimonial.name[0]}
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold">{testimonial.name}</h3>
+                    <p className="text-white/60 text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
+                <p className="text-white/80 text-sm italic">"{testimonial.text}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
-
 }
 
 export default Home;
