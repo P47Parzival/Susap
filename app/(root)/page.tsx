@@ -25,24 +25,43 @@ async function Home() {
     <>
       {/* CTA Section */}
       <section className="card-cta flex flex-col lg:flex-row items-center justify-between gap-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl p-8">
-        <div className="flex flex-col gap-4 max-w-lg">
-          <h2 className="text-white text-2xl lg:text-3xl font-bold leading-tight">
-            Master Technical interview skills with <span className="animate-pulse">Susap</span>
-          </h2>
-          <p className="text-white/80 text-lg">
-            Practice real interview questions & get instant feedback.
-          </p>
+        {/* One to one interview */}
+        <div>
+          <div className="flex flex-col gap-4 max-w-lg">
+            <h2 className="text-white text-2xl lg:text-3xl font-bold leading-tight">
+              Master Technical interview skills with <span className="animate-pulse">Susap</span>
+            </h2>
+            <p className="text-white/80 text-lg">
+              Practice real interview questions & get instant feedback.
+            </p>
 
-          <div className="flex gap-4 max-sm:flex-col max-sm:w-full mt-2">
-            <Button asChild className="btn-primary">
-              <Link href="/interview">Start an Interview</Link>
-            </Button>
-            <Button asChild variant="outline" className="bg-white/10 hover:bg-white/20">
-              <Link href="/chat">Chat with AI</Link>
-            </Button>
-            <Button asChild variant="outline" className="bg-white/10 hover:bg-white/20">
-              <Link href="/courses">Interview Courses</Link>
-            </Button>
+            <div className="flex gap-4 max-sm:flex-col max-sm:w-full mt-2">
+              <Button asChild className="btn-primary">
+                <Link href="/interview">Start an Interview</Link>
+              </Button>
+              <Button asChild variant="outline" className="bg-white/10 hover:bg-white/20">
+                <Link href="/chat">Chat with AI</Link>
+              </Button>
+              <Button asChild variant="outline" className="bg-white/10 hover:bg-white/20">
+                <Link href="/courses">Interview Courses</Link>
+              </Button>
+            </div>
+          </div>
+
+          {/* Group discussion */}
+          <div className="flex flex-col gap-4 max-w-lg mt-4">
+            <h2 className="text-white text-2xl lg:text-3xl font-bold leading-tight">
+              Master Group Discussions with agentic <span className="animate-pulse">Susap</span>
+            </h2>
+            <p className="text-white/80 text-lg">
+              Practice real Group Discussions & get instant feedback.
+            </p>
+
+            <div className="flex gap-4 max-sm:flex-col max-sm:w-full mt-2">
+              <Button asChild className="btn-primary">
+                <Link href="/interview">Start a Group Discussion</Link>
+              </Button>
+            </div>
           </div>
         </div>
 

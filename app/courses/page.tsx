@@ -34,30 +34,55 @@ const courses = [
 
 export default function CoursesPage() {
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-semibold text-white mb-8">
-        Interview Preparation Courses
-      </h1>
-  
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {courses.map((course) => (
-          <Card
-            key={course.id}
-            className="p-6 bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl text-white shadow-md hover:shadow-xl transition-shadow duration-300"
-          >
-            <h2 className="text-xl font-bold mb-2">{course.title}</h2>
-            <p className="text-sm text-white/70 mb-4">{course.description}</p>
-  
-            <div className="flex justify-between items-center text-white/50 text-xs mb-6">
-              <span>Duration: {course.duration}</span>
-              <span>Level: {course.level}</span>
+  <div className="container mx-auto p-6">
+    <h1 className="text-3xl font-bold text-white mb-2">Interview Preparation Courses</h1>
+    <p className="text-white/70 mb-6">Master your interview skills with our specialized training programs</p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {courses.map((course) => (
+        <div
+          key={course.id}
+          className="bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:translate-y-[-4px]"
+        >
+          {/* Course Badge */}
+          <div className="h-2 bg-blue-600"></div>
+          
+          <div className="p-6">
+            {/* Course Header */}
+            <div className="flex justify-between items-start mb-4">
+              <h2 className="text-xl font-bold text-white">{course.title}</h2>
+              <span className="bg-blue-600/20 text-blue-400 text-xs px-2 py-1 rounded-full">{course.level}</span>
             </div>
-  
-            <Button className="btn-primary w-full">Enroll Now</Button>
-          </Card>
-        ))}
-      </div>
+            
+            {/* Course Description */}
+            <p className="text-white/70 text-sm mb-6">{course.description}</p>
+            
+            {/* Course Details */}
+            <div className="flex flex-wrap gap-4 mb-6">
+              <div className="flex items-center text-white/60 text-xs">
+                <div className="w-4 h-4 mr-1 rounded-full bg-gray-700 flex items-center justify-center">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                </div>
+                <span>Duration: {course.duration}</span>
+              </div>
+              
+              <div className="flex items-center text-white/60 text-xs">
+                <div className="w-4 h-4 mr-1 rounded-full bg-gray-700 flex items-center justify-center">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                </div>
+                <span>{course.modules || "6"} Modules</span>
+              </div>
+            </div>
+            
+            {/* Action Button */}
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-medium transition-colors">
+              {course.enrolled ? "Continue Learning" : "Enroll Now"}
+            </button>
+          </div>
+        </div>
+      ))}
     </div>
-  );
+  </div>
+);
   
 } 
