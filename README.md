@@ -2,7 +2,7 @@
 
 A cutting-edge interview preparation platform leveraging AI voice agents and advanced language models to provide realistic interview experiences.
 
-![Susap Banner]([https://github.com/user-attachments/assets/1c0131c7-9f2d-4e3b-b47c-9679e76d8f9a](https://github.com/P47Parzival/Susap/blob/main/public/WhatsApp%20Image%202025-04-12%20at%2015.08.17_15622805.jpg?raw=true))
+![Susap Banner](https://github.com/P47Parzival/Susap/blob/main/public/WhatsApp%20Image%202025-04-12%20at%2015.08.17_15622805.jpg?raw=true)
 
 ## 🚀 Key Features
 
