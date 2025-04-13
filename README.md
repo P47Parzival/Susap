@@ -1,40 +1,39 @@
-# Susap - AI-Powered Mock Interview Platform
+# AI Mock Interviews - Your Personal Interview Preparation Assistant
 
-A cutting-edge interview preparation platform leveraging AI voice agents and advanced language models to provide realistic interview experiences.
+An innovative platform that combines AI voice technology and advanced language models to provide realistic interview experiences and personalized feedback.
 
-![Susap Banner](https://github.com/user-attachments/assets/1c0131c7-9f2d-4e3b-b47c-9679e76d8f9a)
+![AI Mock Interviews Banner](https://github.com/user-attachments/assets/1c0131c7-9f2d-4e3b-b47c-9679e76d8f9a)
 
 ## 🚀 Key Features
 
-- **AI Voice Interviews**: Realistic conversations with Vapi AI-powered voice agents
-- **Smart Feedback**: Real-time performance analysis and detailed feedback using Google Gemini
-- **AI Chat Assistant**: Interactive chat with Groq-powered DeepSeek model for interview preparation
-- **Comprehensive Dashboard**: Track progress and manage interview sessions
-- **Secure Authentication**: Firebase-powered user management
-- **Responsive Design**: Seamless experience across all devices
+- **AI Voice Interviews**: Practice with realistic AI interviewers that adapt to your responses
+- **Real-time Feedback**: Get instant analysis of your interview performance
+- **Personalized Learning**: Receive tailored feedback and improvement suggestions
+- **Multiple Interview Types**: Practice technical, behavioral, and role-specific interviews
+- **Progress Tracking**: Monitor your improvement over time
+- **Subscription Plans**: Flexible pricing options for different needs
 
 ## 🛠️ Technology Stack
 
 [![Next.js](https://img.shields.io/badge/-Next.JS-black?style=for-the-badge&logoColor=white&logo=nextdotjs&color=000000)](https://nextjs.org/)
 [![Firebase](https://img.shields.io/badge/-Firebase-black?style=for-the-badge&logoColor=white&logo=firebase&color=DD2C00)](https://firebase.google.com/)
 [![TailwindCSS](https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4)](https://tailwindcss.com/)
-[![Vapi](https://img.shields.io/badge/-Vapi-white?style=for-the-badge&color=5dfeca)](https://vapi.ai/)
-[![Groq](https://img.shields.io/badge/-Groq-black?style=for-the-badge&logoColor=white&color=00A67E)](https://groq.com/)
+[![Stripe](https://img.shields.io/badge/-Stripe-black?style=for-the-badge&logoColor=white&logo=stripe&color=008CDD)](https://stripe.com/)
+[![Vercel](https://img.shields.io/badge/-Vercel-black?style=for-the-badge&logoColor=white&logo=vercel&color=000000)](https://vercel.com/)
 
 - **Frontend**: Next.js 14, TailwindCSS, shadcn/ui
-- **Backend**: Firebase, Google Gemini API
-- **Voice AI**: Vapi AI
-- **Chat AI**: Groq API with DeepSeek R1 Distill LLaMA 70B model
-- **Feedback AI**: Google Gemini 2.0 Flash 001
-- **Validation**: Zod
+- **Backend**: Firebase, API Routes
 - **Authentication**: Firebase Auth
+- **Payments**: Stripe Integration
+- **Deployment**: Vercel
+- **Styling**: TailwindCSS, shadcn/ui components
 
 ## ⚡ Quick Setup
 
 1. **Clone the repository**
 ```bash
-   git clone https://github.com/yourusername/susap.git
-   cd susap
+git clone https://github.com/yourusername/ai-mock-interviews.git
+cd ai-mock-interviews
 ```
 
 2. **Install dependencies**
@@ -45,13 +44,16 @@ npm install
 3. **Configure environment variables**
    Create `.env.local` and add:
 ```env
-   NEXT_PUBLIC_VAPI_WEB_TOKEN=your_vapi_token
-   NEXT_PUBLIC_VAPI_WORKFLOW_ID=your_workflow_id
-   GOOGLE_GENERATIVE_AI_API_KEY=your_gemini_key
-   NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_key
-   GROQ_API_KEY=your_groq_api_key
-   # Add other Firebase config variables
-   ```
+NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+STRIPE_SECRET_KEY=your_stripe_secret_key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+```
 
 4. **Start development server**
 ```bash
@@ -61,34 +63,38 @@ npm run dev
 ## 🎯 Core Features
 
 ### Interview Experience
-- Dynamic conversation flow with AI voice agents
-- Industry-specific interview questions
-- Real-time voice interaction
-- Natural language processing
-
-### AI Chat Assistant
-- Interactive chat with DeepSeek R1 Distill LLaMA 70B model
-- Real-time responses to interview preparation questions
-- Contextual understanding of technical concepts
-- Personalized guidance for interview success
+- Realistic AI-powered interview simulations
+- Multiple interview types (Technical, Behavioral, etc.)
+- Voice-based interactions
+- Natural conversation flow
+- Adaptive questioning based on responses
 
 ### Performance Analytics
-- Detailed feedback on responses using Gemini 2.0 Flash 001
+- Detailed feedback on responses
 - Communication skills assessment
 - Technical knowledge evaluation
 - Improvement suggestions
+- Progress tracking over time
 
 ### User Dashboard
-- Interview history tracking
+- Interview history
 - Performance metrics
 - Progress visualization
 - Session recordings
+- Subscription management
+
+### Subscription Management
+- Multiple pricing tiers
+- Secure payment processing
+- Subscription status tracking
+- Upgrade/downgrade options
 
 ## 🔒 Security
 
-- Secure authentication flow
+- Secure authentication with Firebase
 - Protected API endpoints
 - Encrypted data storage
+- Secure payment processing with Stripe
 - GDPR-compliant data handling
 
 ## 🤝 Contributing
@@ -105,13 +111,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [Vapi AI](https://vapi.ai) for voice agent technology
-- [Google Gemini](https://deepmind.google/technologies/gemini/) for AI language model
-- [Groq](https://groq.com) for high-performance AI inference
+- [Next.js](https://nextjs.org/) for the amazing React framework
 - [Firebase](https://firebase.google.com) for backend services
+- [Stripe](https://stripe.com) for payment processing
+- [Vercel](https://vercel.com) for hosting and deployment
+- [shadcn/ui](https://ui.shadcn.com) for beautiful UI components
 
 ---
 
 <div align="center">
-  <strong>Built with ❤️ for the future of interview preparation</strong>
-      </div>
+  <strong>Built with ❤️ to help everyone ace their interviews</strong>
+</div>
