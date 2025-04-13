@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { isAuthenticated } from "@/lib/actions/auth.action";
 import PricingCards from "@/components/PricingCards";
+import LogoutButton from "@/components/LogoutButton";
 
 const Layout = async ({ children }: { children: ReactNode }) => {
   const isUserAuthenticated = await isAuthenticated();
@@ -26,6 +27,7 @@ const Layout = async ({ children }: { children: ReactNode }) => {
           <Button asChild variant="outline" className="bg-white/10 hover:bg-white/20">
             <Link href="/profile">My Profile</Link>
           </Button>
+          <LogoutButton />
         </div>
       </nav>
 
