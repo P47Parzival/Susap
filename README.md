@@ -24,7 +24,7 @@ A cutting-edge interview preparation platform leveraging AI voice agents and adv
 - **Frontend**: Next.js 14, TailwindCSS, shadcn/ui
 - **Backend**: Firebase, Google Gemini API
 - **Voice AI**: Vapi AI
-- **Chat AI**: Groq API with DeepSeek R1 Distill LLaMA 70B model
+- **Chat AI**: Groq API with qwen-2.5-32b
 - **Feedback AI**: Google Gemini 2.0 Flash 001
 - **Validation**: Zod
 - **Authentication**: Firebase Auth
