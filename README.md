@@ -20,6 +20,7 @@ An innovative platform that combines AI voice technology and advanced language m
 [![TailwindCSS](https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4)](https://tailwindcss.com/)
 [![Stripe](https://img.shields.io/badge/-Stripe-black?style=for-the-badge&logoColor=white&logo=stripe&color=008CDD)](https://stripe.com/)
 [![Vercel](https://img.shields.io/badge/-Vercel-black?style=for-the-badge&logoColor=white&logo=vercel&color=000000)](https://vercel.com/)
+[![Vapi](https://img.shields.io/badge/-Vapi-white?style=for-the-badge&color=5dfeca)](https://vapi.ai/)
 
 - **Frontend**: Next.js 14, TailwindCSS, shadcn/ui
 - **Backend**: Firebase, API Routes
@@ -27,6 +28,7 @@ An innovative platform that combines AI voice technology and advanced language m
 - **Payments**: Stripe Integration
 - **Deployment**: Vercel
 - **Styling**: TailwindCSS, shadcn/ui components
+- **Voice AI**: Vapi AI for realistic interview simulations
 
 ## ⚡ Quick Setup
 
