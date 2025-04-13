@@ -64,10 +64,38 @@ async function Home() {
             </div>
           </div>
         </div>
-
+    
         <Image
           src="/robot.png"
           alt="AI Robot"
+          width={400}
+          height={400}
+          className="hidden lg:block drop-shadow-xl"
+        />
+      </section>
+
+      {/* Real World Experts Section */}
+      <section className="card-cta flex flex-col lg:flex-row items-center justify-between gap-10 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl p-8 mt-8">
+        <div>
+          <div className="flex flex-col gap-4 max-w-lg">
+            <h2 className="text-white text-2xl lg:text-3xl font-bold leading-tight">
+              Connect with Real World Experts
+            </h2>
+            <p className="text-white/80 text-lg">
+              Get personalized guidance from industry professionals and experienced interviewers.
+            </p>
+
+            <div className="flex gap-4 max-sm:flex-col max-sm:w-full mt-2">
+              <Button asChild className="btn-primary">
+                <Link href="/experts">Talk to Real World Experts</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+    
+        <Image
+          src="/experts.png"
+          alt="Experts Network"
           width={400}
           height={400}
           className="hidden lg:block drop-shadow-xl"

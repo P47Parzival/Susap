@@ -35,6 +35,7 @@ const courses = [
 export default function CoursesPage() {
   return (
   <div className="container mx-auto p-6">
+    
     <h1 className="text-3xl font-bold text-white mb-2">Interview Preparation Courses</h1>
     <p className="text-white/70 mb-6">Master your interview skills with our specialized training programs</p>
 

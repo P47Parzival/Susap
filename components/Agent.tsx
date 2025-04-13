@@ -37,6 +37,7 @@ const Agent = ({
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [lastMessage, setLastMessage] = useState<string>("");
   const [currentInterviewId, setCurrentInterviewId] = useState<string | undefined>(interviewId);
+  const [isDisconnecting, setIsDisconnecting] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -48,6 +49,7 @@ const Agent = ({
     const onCallStart = () => {
       console.log("Call started");
       setCallStatus(CallStatus.ACTIVE);
+      setIsDisconnecting(false);
     };
 
     const onCallEnd = () => {
@@ -74,9 +76,26 @@ const Agent = ({
       setIsSpeaking(false);
     };
 
-    const onError = (error: Error) => {
+    const onError = (error: any) => {
       console.error("Vapi error:", error);
-      // Don't change state here, let the error propagate to the appropriate handler
+      
+      // Handle specific error types
+      if (error && error.type === 'no-room') {
+        console.log("Room was deleted, handling gracefully");
+        // If we're not already disconnecting, handle this error
+        if (!isDisconnecting) {
+          handleGracefulDisconnect();
+        }
+      }
+    };
+
+    // Listen for connection status changes
+    const onConnectionStatusChanged = (status: any) => {
+      console.log("Connection status changed to:", status);
+      if (status === "disconnected" && !isDisconnecting) {
+        console.log("Connection disconnected, handling gracefully");
+        handleGracefulDisconnect();
+      }
     };
 
     vapi.on("call-start", onCallStart);
@@ -85,6 +104,18 @@ const Agent = ({
     vapi.on("speech-start", onSpeechStart);
     vapi.on("speech-end", onSpeechEnd);
     vapi.on("error", onError);
+    
+    // Add a custom event listener for connection status
+    window.addEventListener("online", () => {
+      console.log("Browser is online");
+    });
+    
+    window.addEventListener("offline", () => {
+      console.log("Browser is offline");
+      if (!isDisconnecting) {
+        handleGracefulDisconnect();
+      }
+    });
 
     return () => {
       console.log("Cleaning up Vapi event listeners");
@@ -94,8 +125,12 @@ const Agent = ({
       vapi.off("speech-start", onSpeechStart);
       vapi.off("speech-end", onSpeechEnd);
       vapi.off("error", onError);
+      
+      // Remove custom event listeners
+      window.removeEventListener("online", () => {});
+      window.removeEventListener("offline", () => {});
     };
-  }, [mounted]);
+  }, [mounted, isDisconnecting]);
 
   // Add a separate effect to handle call status changes
   useEffect(() => {
@@ -150,10 +185,35 @@ const Agent = ({
     }
   }, [messages, callStatus, feedbackId, currentInterviewId, router, type, userId]);
 
+  const handleGracefulDisconnect = () => {
+    if (isDisconnecting) return;
+    
+    try {
+      console.log("Handling graceful disconnect...");
+      setIsDisconnecting(true);
+      
+      // Set status to FINISHED to trigger feedback generation
+      setCallStatus(CallStatus.FINISHED);
+      
+      // Try to stop the call gracefully
+      try {
+        console.log("Attempting to gracefully stop the call...");
+        vapi.stop();
+        console.log("Call stopped successfully");
+      } catch (stopError) {
+        console.error("Error stopping call:", stopError);
+      }
+    } catch (error) {
+      console.error("Error in handleGracefulDisconnect:", error);
+      setCallStatus(CallStatus.INACTIVE);
+    }
+  };
+
   const handleCall = async () => {
     try {
       console.log("Starting call...");
       setCallStatus(CallStatus.CONNECTING);
+      setIsDisconnecting(false);
 
       // If in generate mode and no interviewId exists, create one
       let interviewIdToUse = currentInterviewId;
@@ -210,8 +270,11 @@ const Agent = ({
   };
 
   const handleDisconnect = () => {
+    if (isDisconnecting) return;
+    
     try {
       console.log("Disconnecting call...");
+      setIsDisconnecting(true);
       
       // First set the status to FINISHED to trigger feedback generation
       setCallStatus(CallStatus.FINISHED);
@@ -321,8 +384,6 @@ const Agent = ({
       )}
     </>
   );
-  
-  
 };
 
 export default Agent;

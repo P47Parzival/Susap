@@ -137,6 +137,7 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    cursor: default;
   }
   body {
     @apply bg-background text-foreground;
