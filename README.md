@@ -1,8 +1,24 @@
-# Susap AI Mock Interviews - Your Personal Interview Preparation Assistant
+<div align="center">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
+    <img src="https://github.com/P47Parzival/Susap/blob/main/public/logo.png?raw=true" alt="AI Mock Interviews Logo" width="150"/>
+    <h1 style="margin: 0;">Susap - Speak up, Show up, ace professionally</h1>
+  </div>
+</div>
+
+
+# AI Mock Interviews - Your Personal Interview Preparation Assistant
 
 An innovative platform that combines AI voice technology and advanced language models to provide realistic interview experiences and personalized feedback.
 
-![AI Mock Interviews Banner](https://github.com/P47Parzival/Susap/blob/main/public/WhatsApp%20Image%202025-04-12%20at%2015.08.17_15622805.jpg?raw=true)
+## AI agent wokflow diagram and Architecture Diagram
+
+<div align="center">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
+    <img src="https://github.com/P47Parzival/Susap/blob/main/public/diagram-export-13-4-2025-7_31_11-am.png?raw=true" alt="AI workflow" width="150"/>
+    <img src="https://github.com/P47Parzival/Susap/blob/main/public/ARCHITECTURE.drawio%20(7).png?raw=true" alt="Architecture Diagram" width="150"/>
+  </div>
+</div>
+
 
 ## 🚀 Key Features
 
@@ -34,7 +50,7 @@ An innovative platform that combines AI voice technology and advanced language m
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/ai-mock-interviews.git
+git clone https://github.com/P47Parzival/Susap.git
 cd ai-mock-interviews
 ```
 
@@ -109,7 +125,8 @@ npm run dev
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the BSD License - see the [LICENSE](LICENSE) file for details.\
+Play with my toy and change it if you want. Just remember to say I made the first one. And don't use my name to say your toy is the best.
 
 ## 🙏 Acknowledgments
 
