@@ -14,8 +14,8 @@ An innovative platform that combines AI voice technology and advanced language m
 
 <div align="center">
   <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
-    <img src="https://github.com/P47Parzival/Susap/blob/main/public/diagram-export-13-4-2025-7_31_11-am.png?raw=true" alt="AI workflow" width="150"/>
-    <img src="https://github.com/P47Parzival/Susap/blob/main/public/ARCHITECTURE.drawio%20(7).png?raw=true" alt="Architecture Diagram" width="150"/>
+    <img src="https://github.com/P47Parzival/Susap/blob/main/public/diagram-export-13-4-2025-7_31_11-am.png?raw=true" alt="AI workflow" width="350"/>
+    <img src="https://github.com/P47Parzival/Susap/blob/main/public/ARCHITECTURE.drawio%20(7).png?raw=true" alt="Architecture Diagram" width="450"/>
   </div>
 </div>
 
