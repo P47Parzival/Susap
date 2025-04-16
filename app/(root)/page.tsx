@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
+import LoadingButton from "@/components/LoadingButton";
 import InterviewCard from "@/components/InterviewCard";
 
 import { getCurrentUser } from "@/lib/actions/auth.action";
@@ -36,15 +36,15 @@ async function Home() {
             </p>
 
             <div className="flex gap-4 max-sm:flex-col max-sm:w-full mt-2">
-              <Button asChild className="btn-primary">
-                <Link href="/interview">Start an Interview</Link>
-              </Button>
-              <Button asChild variant="outline" className="bg-white/10 hover:bg-white/20">
-                <Link href="/chat">Chat with AI</Link>
-              </Button>
-              <Button asChild variant="outline" className="bg-white/10 hover:bg-white/20">
-                <Link href="/courses">Interview Courses</Link>
-              </Button>
+              <LoadingButton href="/interview" className="btn-primary">
+                Start an Interview
+              </LoadingButton>
+              <LoadingButton href="/chat" variant="outline" className="bg-white/10 hover:bg-white/20">
+                Chat with AI
+              </LoadingButton>
+              <LoadingButton href="/courses" variant="outline" className="bg-white/10 hover:bg-white/20">
+                Interview Courses
+              </LoadingButton>
             </div>
           </div>
 
@@ -58,9 +58,9 @@ async function Home() {
             </p>
 
             <div className="flex gap-4 max-sm:flex-col max-sm:w-full mt-2">
-              <Button asChild className="btn-primary">
-                <Link href="/interview">Start a Group Discussion</Link>
-              </Button>
+              <LoadingButton href="/interview" className="btn-primary">
+                Start a Group Discussion
+              </LoadingButton>
             </div>
           </div>
         </div>
@@ -86,9 +86,9 @@ async function Home() {
             </p>
 
             <div className="flex gap-4 max-sm:flex-col max-sm:w-full mt-2">
-              <Button asChild className="btn-primary">
-                <Link href="/experts">Talk to Real World Experts</Link>
-              </Button>
+              <LoadingButton href="/experts" className="btn-primary">
+                Talk to Real World Experts
+              </LoadingButton>
             </div>
           </div>
         </div>
