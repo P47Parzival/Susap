@@ -8,6 +8,7 @@ import { auth } from "@/firebase/client";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 
 import {
   createUserWithEmailAndPassword,
@@ -30,6 +31,7 @@ const authFormSchema = (type: FormType) => {
 
 const AuthForm = ({ type }: { type: FormType }) => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const formSchema = authFormSchema(type);
   const form = useForm<z.infer<typeof formSchema>>({
@@ -43,6 +45,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     try {
+      setIsLoading(true);
       if (type === "sign-up") {
         const { name, email, password } = data;
 
@@ -110,6 +113,8 @@ const AuthForm = ({ type }: { type: FormType }) => {
     } catch (error) {
       console.log(error);
       toast.error(`There was an error: ${error}`);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -176,10 +181,17 @@ const AuthForm = ({ type }: { type: FormType }) => {
             />
   
             <Button
-              className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 px-4 rounded-lg text-sm font-semibold tracking-wide transition-all"
+              className="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-2 px-4 rounded-lg text-sm font-semibold tracking-wide transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               type="submit"
             >
-              {isSignIn ? "Sign In" : "Create an Account"}
+              {isLoading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  {isSignIn ? "Signing in..." : "Creating account..."}
+                </div>
+              ) : (
+                isSignIn ? "Sign In" : "Create an Account"
+              )}
             </Button>
           </form>
         </Form>
@@ -197,7 +209,6 @@ const AuthForm = ({ type }: { type: FormType }) => {
       </div>
     </div>
   );
-  
 };
 
 export default AuthForm;
