@@ -126,7 +126,7 @@ npm run dev
 ## 📄 License
 
 This project is licensed under the BSD License - see the [LICENSE](LICENSE) file for details.\
-Play with my toy and change it if you want. Just remember to say I made the first one. And don't use my name to say your toy is the best.
+Play with my toy and change it if you want. Just remember to say I made the first one And don't use my name to say your toy is the best.
 
 ## 🙏 Acknowledgments
 
